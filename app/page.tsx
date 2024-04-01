@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import LandingImage from "@/public/Photos/LandingBackground.png";
 import Icon from "@/public/Icon.svg";
 import Arrow from "@/public/Arrow.svg";
+import ContactBlock from "@/components/ContactBlock";
 
 const LandingBackground = styled.div`
   width: 100%;
@@ -31,7 +32,7 @@ const LandingBackground = styled.div`
       width: 70%;
       text-align: center;
       color: #fff;
-    } 
+    }
   }
 `;
 
@@ -69,10 +70,6 @@ const NavBlock = styled.div`
   .link {
     font-weight: bold;
     color: #be7c4d;
-
-    span {
-      font-style: italic;
-    }
   }
 
   .text {
@@ -174,6 +171,7 @@ export default function Home() {
           <div className="image" style={{ backgroundColor: "#d5d5d5" }} />
         </NavBlock>
       </Container>
+      <ContactBlock />
     </div>
   );
 }

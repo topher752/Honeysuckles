@@ -77,6 +77,10 @@ h2 {
   color: #750d37;
 }
 
+span {
+  font-style: italic;
+}
+
 /* 
 @media (prefers-color-scheme: dark) {
   html {
