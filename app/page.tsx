@@ -11,7 +11,7 @@ const LandingBackground = styled.div`
   width: 100%;
   height: auto;
   padding: 100px 0;
-  background-size: 100%;
+  background-size: cover;
 
   .items {
     display: flex;
@@ -90,7 +90,7 @@ export default function Home() {
   return (
     <div>
       <LandingBackground
-        style={{ backgroundImage: `url(${LandingImage.src})` }}
+        style={{ backgroundImage: `url(${LandingImage.src}) no-repeat` }}
       >
         <div className="items">
           <img src={Icon.src} />
