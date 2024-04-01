@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { raleway, roboto } from "./fonts";
 import "./globals.css";
 import HeadNav from "@/components/HeadNav";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,6 +19,9 @@ export default function RootLayout({
       <body>
         <HeadNav />
         <main>{children}</main>
+        <footer>
+          <Footer />
+        </footer>
       </body>
     </html>
   );
