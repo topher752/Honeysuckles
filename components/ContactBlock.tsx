@@ -17,13 +17,10 @@ const Block = styled.div`
     p {
       font-size: 1.75rem;
 
-      span {
-        cursor: pointer;
-      }
-
       .underline {
         font-style: normal !important;
         border-bottom: 2px solid #002e2c;
+        cursor: pointer;
       }
     }
   }
