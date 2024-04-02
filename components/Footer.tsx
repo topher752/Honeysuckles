@@ -52,7 +52,7 @@ export default function Footer() {
       </div>
       <div className="icons">
         <a
-          href="https://www.linkedin.com/in/jill-tate-bsn-rn-42499423/"
+          href="https://www.linkedin.com/company/honeysucklesflowers"
           target="_blank"
         >
           <img src={LinkedIn.src} />
