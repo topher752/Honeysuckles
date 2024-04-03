@@ -2,7 +2,7 @@
 
 import styled from "styled-components";
 import { useRouter } from "next/navigation";
-import LandingImage from "@/public/Photos/LandingBackground.png";
+// import LandingImage from "@/public/Photos/LandingBackground.png";
 import Icon from "@/public/Icon.svg";
 import Arrow from "@/public/Arrow.svg";
 import ContactBlock from "@/components/ContactBlock";
@@ -12,6 +12,7 @@ const LandingBackground = styled.div`
   height: auto;
   padding: 100px 0;
   background-size: cover;
+  background-repeat: no-repeat;
 
   .items {
     display: flex;
@@ -90,7 +91,7 @@ export default function Home() {
   return (
     <div>
       <LandingBackground
-        style={{ backgroundImage: `url(${LandingImage.src}) no-repeat` }}
+        // style={{ backgroundImage: `url(${LandingImage.src})` }}
       >
         <div className="items">
           <img src={Icon.src} />
