@@ -11,10 +11,6 @@ const LandingBackground = styled.div`
   width: 100%;
   height: auto;
   padding: 100px 0;
-
-  .overlay {
-
-  }
   background-size: cover;
   background-repeat: no-repeat;
 
