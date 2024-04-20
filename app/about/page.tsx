@@ -3,13 +3,13 @@ import AboutImage from "@/public/Photos/AboutImage.webp";
 import styled from "styled-components";
 import ContactBlock from "@/components/ContactBlock";
 
-const ContactInfo = styled.div`
+const AboutInfo = styled.div`
   display: flex;
   gap: 100px;
   padding: 65px 100px;
   justify-content: center;
 
-  .contact-image {
+  .about-image {
     max-height: 600px;
     width: auto;
     height: 75vh;
@@ -39,7 +39,7 @@ const ContactInfo = styled.div`
 export default function ContactUsPage() {
   return (
     <>
-      <ContactInfo>
+      <AboutInfo>
         <div className="text raleway">
           <h2>Welcome to Honeysuckles</h2>
           <p className="roboto">
@@ -65,8 +65,8 @@ export default function ContactUsPage() {
             may be of service, please contact me. I look forward to helping you.
           </p>
         </div>
-        <img className="contact-image" src={AboutImage.src} />
-      </ContactInfo>
+        <img className="about-image" src={AboutImage.src} />
+      </AboutInfo>
       <ContactBlock />
     </>
   );
