@@ -1,5 +1,5 @@
 "use client";
-import AboutImage from "@/public/Photos/AboutImage.webp";
+import ContactImage from "@/public/Photos/ContactFlowers.webp";
 import styled from "styled-components";
 import ContactForm from "@/components/ContactForm";
 
@@ -49,7 +49,7 @@ export default function ContactUsPage() {
           </p>
           <ContactForm />
         </div>
-        {/* <img className="contact-image" src={AboutImage.src} /> */}
+        <img className="contact-image" src={ContactImage.src} />
       </ContactInfo>
     </>
   );
