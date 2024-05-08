@@ -1,3 +1,6 @@
+import { EverydayPhotos } from "@/components/PhotoObjects";
+import PhotoGallery from "@/components/PhotoGallery";
+
 export default function EverydayPage() {
-  return <main>EveryDay Page </main>;
+  return <PhotoGallery images={EverydayPhotos} />;
 }

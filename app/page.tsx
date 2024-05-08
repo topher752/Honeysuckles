@@ -6,6 +6,10 @@ import LandingImage from "@/public/Photos/LandingBackground.webp";
 import Icon from "@/public/Icon.svg";
 import Arrow from "@/public/Arrow.svg";
 import ContactBlock from "@/components/ContactBlock";
+import Image from "next/image";
+import WeddingsImg from "@/public/Photos/Weddings/Table_Decor.webp";
+import EverydayImg from "@/public/Photos/Everyday/Birthday_Bouquet.webp";
+import SpecialImg from "@/public/Photos/SpecialOccassions/Custom_Fall_Decor.webp";
 
 const LandingBackground = styled.div`
   width: 100%;
@@ -55,9 +59,9 @@ const NavBlock = styled.div`
     max-width: 350px;
     max-height: 350px;
     width: 75vw;
-    background-image: no-repeat;
     background-size: 100%;
     border-radius: 10px;
+    object-fit: cover;
   }
 
   h2 {
@@ -71,6 +75,7 @@ const NavBlock = styled.div`
   .link {
     font-weight: bold;
     color: #be7c4d;
+    cursor: pointer;
   }
 
   .text {
@@ -123,7 +128,15 @@ export default function Home() {
               <img src={Arrow.src} />
             </div>
           </div>
-          <div className="image" style={{ backgroundColor: "#d5d5d5" }} />
+          <Image
+            className="image"
+            src={WeddingsImg.src}
+            height={0}
+            width={0}
+            unoptimized
+            loading="lazy"
+            alt="weddings image"
+          />
         </NavBlock>
         <NavBlock style={{ flexDirection: "row-reverse" }}>
           <div className="text">
@@ -146,7 +159,15 @@ export default function Home() {
               <img src={Arrow.src} />
             </div>
           </div>
-          <div className="image" style={{ backgroundColor: "#d5d5d5" }} />
+          <Image
+            className="image"
+            src={EverydayImg.src}
+            height={0}
+            width={0}
+            unoptimized
+            loading="lazy"
+            alt="everyday image"
+          />
         </NavBlock>
         <NavBlock>
           <div className="text">
@@ -169,7 +190,15 @@ export default function Home() {
               <img src={Arrow.src} />
             </div>
           </div>
-          <div className="image" style={{ backgroundColor: "#d5d5d5" }} />
+          <Image
+            className="image"
+            src={SpecialImg.src}
+            height={0}
+            width={0}
+            unoptimized
+            loading="lazy"
+            alt="special occasions image"
+          />
         </NavBlock>
       </Container>
       <ContactBlock />
