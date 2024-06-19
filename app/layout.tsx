@@ -3,6 +3,7 @@ import { raleway, roboto } from "./fonts";
 import "./globals.css";
 import HeadNav from "@/components/HeadNav";
 import Footer from "@/components/Footer";
+import StyledComponentsRegistry from "@/components/registry";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,11 +18,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${raleway.variable} ${roboto.variable}`}>
       <body>
-        <HeadNav />
-        <main>{children}</main>
-        <footer>
-          <Footer />
-        </footer>
+        <StyledComponentsRegistry>
+          <HeadNav />
+          <main>{children}</main>
+          <footer>
+            <Footer />
+          </footer>
+        </StyledComponentsRegistry>
       </body>
     </html>
   );
