@@ -3,7 +3,7 @@ export interface IEmail {
   email: string;
   message: string;
   phoneNumber: string;
-  image: any;
+  image?: any;
 }
 
 export const EmailTemplate = ({
