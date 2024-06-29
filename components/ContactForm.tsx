@@ -2,6 +2,7 @@
 
 import React, { useRef, useState } from "react";
 import styled from "styled-components";
+import { sendForm } from "./api";
 
 const Form = styled.form`
   width: 100%;
@@ -108,8 +109,8 @@ export default function ContactForm() {
     return regex!.test(value);
   };
 
-  const handleSubmit = () => {
-    console.log(user);
+  const handleSubmit = async () => {
+    await sendForm(user);
   };
 
   return (
