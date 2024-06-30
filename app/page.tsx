@@ -59,6 +59,10 @@ const Container = styled.div`
   flex-direction: column;
   gap: 125px;
 
+  @media (max-width: 1200px) {
+    padding: 100px 75px;
+  }
+
   @media (max-width: 768px) {
     padding: 50px 75px;
     gap: 50px;

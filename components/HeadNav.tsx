@@ -68,11 +68,13 @@ const MobileNav = styled.div`
     .menu {
       height: 35px;
       width: 35px;
+      cursor: pointer;
     }
 
     .mobile-logo {
       height: 45px;
       width: 45px;
+      cursor: pointer;
     }
   }
 
