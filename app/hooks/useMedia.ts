@@ -13,6 +13,7 @@ export function useMedia(test: string) {
       media.addListener(listener);
       return () => media.removeListener(listener);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [test]);
   return match;
 }

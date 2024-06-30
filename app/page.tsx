@@ -153,7 +153,7 @@ export default function Home() {
         style={{ backgroundImage: `url(${LandingImage.src})` }}
       >
         <div className="items">
-          <img src={Icon.src} />
+          <img src={Icon.src} alt="icon-logo"/>
           <h1 className="raleway">
             Creating elegant floral and greenery arrangements
           </h1>
@@ -166,7 +166,7 @@ export default function Home() {
             <p className="roboto">
               From church arrangements to reception centerpieces and everything
               in between; create elegant pieces to celebrate your special day.
-              Choose your color palate, favorite flowers, and style, and let's
+              Choose your color palate, favorite flowers, and style, and let&apos;s
               celebrate.
             </p>
             <div
@@ -179,7 +179,7 @@ export default function Home() {
               <p className="link raleway">
                 View more in <span>Weddings</span>
               </p>
-              <img src={Arrow.src} />
+              <img src={Arrow.src} alt="nav-arrow"/>
             </div>
           </div>
           <Image
@@ -210,7 +210,7 @@ export default function Home() {
               <p className="link raleway">
                 View more in <span>Everyday</span>
               </p>
-              <img src={Arrow.src} />
+              <img src={Arrow.src} alt="nav-arrow"/>
             </div>
           </div>
           <Image
@@ -227,7 +227,7 @@ export default function Home() {
           <div className="text">
             <h2 className="raleway">Special Occasions</h2>
             <p className="roboto">
-              Hosting an event? Dinner parties, Showers, Bunco to BBQ's; add
+              Hosting an event? Dinner parties, Showers, Bunco to BBQ&apos;s; add
               special touches with fresh decorations and swags. Create beautiful
               and elegant decorations to enhance your event.
             </p>
@@ -241,7 +241,7 @@ export default function Home() {
               <p className="link raleway">
                 View more in <span>Special Occasions</span>
               </p>
-              <img src={Arrow.src} />
+              <img src={Arrow.src} alt="nav-arrow"/>
             </div>
           </div>
           <Image

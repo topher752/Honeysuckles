@@ -73,7 +73,7 @@ export default function ContactUsPage() {
           </p>
           <ContactForm />
         </div>
-        <img className="contact-image" src={ContactImage.src} />
+        <img className="contact-image" src={ContactImage.src} alt="contact-us-flowers"/>
       </ContactInfo>
     </>
   );
