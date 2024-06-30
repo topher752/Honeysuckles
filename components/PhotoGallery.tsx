@@ -1,6 +1,8 @@
 "use client";
 import styled from "styled-components";
 import Image from "next/image";
+import { useState } from "react";
+import ViewImage from "./ViewImage";
 
 const Gallery = styled.div`
   padding: 65px 100px;
@@ -21,6 +23,7 @@ const Gallery = styled.div`
     border-radius: 5px;
     height: 100%;
     width: 100%;
+    cursor: pointer;
   }
 
   .tall {
@@ -55,20 +58,37 @@ const Gallery = styled.div`
 `;
 
 export default function PhotoGallery({ images }: { images: any[] }) {
+  const [viewImage, setViewImage] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<any>({});
   return (
-    <Gallery>
-      {images.map((img, idx) => (
-        <div key={idx} className={img.size}>
-          <Image
-            src={img.src}
-            alt={img.alt}
-            height={0}
-            width={0}
-            unoptimized
-            loading="lazy"
-          />
-        </div>
-      ))}
-    </Gallery>
+    <>
+      {viewImage && (
+        <ViewImage
+          closeModal={() => setViewImage(false)}
+          image={selectedImage}
+        />
+      )}
+      <Gallery style={viewImage ? {overflow: "none"} : {}}>
+        {images.map((img, idx) => (
+          <div
+            key={idx}
+            className={img.size}
+            onClick={() => {
+              setSelectedImage(img);
+              setViewImage(true);
+            }}
+          >
+            <Image
+              src={img.src}
+              alt={img.alt}
+              height={0}
+              width={0}
+              unoptimized
+              loading="lazy"
+            />
+          </div>
+        ))}
+      </Gallery>
+    </>
   );
 }
