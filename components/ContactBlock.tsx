@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const Block = styled.div`
   background-color: #ffe0e0;
-  padding: 80px 0;
+  padding: 80px 20px;
   width: 100%;
 
   .text {
@@ -16,12 +16,35 @@ const Block = styled.div`
 
     p {
       font-size: 1.75rem;
+      line-height: normal;
 
       .underline {
         font-style: normal !important;
         border-bottom: 2px solid #002e2c;
         cursor: pointer;
       }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 50px 20px;
+    h2 {
+      font-size: 1.75rem;
+    }
+
+    p,
+    span {
+      font-size: 1.25rem !important;
+    }
+  }
+
+  @media (max-width: 400px) {
+    h2 {
+      font-size: 1.5rem;
+    }
+    p,
+    span {
+      font-size: 1rem !important;
     }
   }
 `;

@@ -31,6 +31,23 @@ const StyledFooter = styled.div`
     gap: 25px;
     align-items: center;
   }
+
+  @media (max-width: 768px) {
+    align-items: center;
+    padding: 40px;
+
+    .navigation {
+      flex-wrap: wrap;
+      margin-bottom: 50px;
+      font-size: 1.25rem;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .navigation p {
+      width: 100%;
+    }
+  }
 `;
 
 export default function Footer() {

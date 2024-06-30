@@ -10,6 +10,7 @@ import Image from "next/image";
 import WeddingsImg from "@/public/Photos/Weddings/Table_Decor.webp";
 import EverydayImg from "@/public/Photos/Everyday/Birthday_Bouquet.webp";
 import SpecialImg from "@/public/Photos/SpecialOccassions/Custom_Fall_Decor.webp";
+import { useMedia } from "./hooks/useMedia";
 
 const LandingBackground = styled.div`
   width: 100%;
@@ -39,6 +40,17 @@ const LandingBackground = styled.div`
       color: #fff;
     }
   }
+
+  @media (max-width: 700px) {
+    padding: 125px 0 50px;
+    img {
+      max-height: 125px !important;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
 `;
 
 const Container = styled.div`
@@ -46,6 +58,15 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 125px;
+
+  @media (max-width: 768px) {
+    padding: 50px 75px;
+    gap: 50px;
+  }
+
+  @media (max-width: 400px) {
+    padding: 25px 40px;
+  }
 `;
 
 const NavBlock = styled.div`
@@ -89,10 +110,39 @@ const NavBlock = styled.div`
       gap: 10px;
     }
   }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+
+    .image {
+      height: auto;
+      width: 45vw;
+      aspect-ratio: 1 / 1;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      text-wrap: wrap;
+      width: 100%;
+    }
+
+    p {
+      font-size: 1.25rem;
+    }
+
+    .text {
+      width: 100%;
+      gap: 10px;
+    }
+  }
 `;
 
 export default function Home() {
   const router = useRouter();
+  const max768 = useMedia("(max-width: 768px");
+
   return (
     <div>
       <LandingBackground
@@ -138,7 +188,7 @@ export default function Home() {
             alt="weddings image"
           />
         </NavBlock>
-        <NavBlock style={{ flexDirection: "row-reverse" }}>
+        <NavBlock style={!max768 ? { flexDirection: "row-reverse" } : {}}>
           <div className="text">
             <h2 className="raleway">Flower Arrangements</h2>
             <p className="roboto">

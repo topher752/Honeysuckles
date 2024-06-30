@@ -38,6 +38,7 @@ const Gallery = styled.div`
   }
 
   @media (max-width: 768px) {
+    padding: 90px 75px 20px;
     grid-template-columns: 100%;
     grid-auto-rows: 300px;
 
@@ -47,6 +48,10 @@ const Gallery = styled.div`
       grid-column: span 1;
     }
   }
+
+  @media (max-width: 400px) {
+    padding: 90px 50px 20px;
+  }
 `;
 
 export default function PhotoGallery({ images }: { images: any[] }) {
@@ -54,7 +59,14 @@ export default function PhotoGallery({ images }: { images: any[] }) {
     <Gallery>
       {images.map((img, idx) => (
         <div key={idx} className={img.size}>
-          <Image src={img.src} alt={img.alt} height={0} width={0} unoptimized loading="lazy"/>
+          <Image
+            src={img.src}
+            alt={img.alt}
+            height={0}
+            width={0}
+            unoptimized
+            loading="lazy"
+          />
         </div>
       ))}
     </Gallery>

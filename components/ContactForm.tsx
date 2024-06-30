@@ -79,6 +79,31 @@ const Form = styled.form`
       background-color: #035e7b;
     }
   }
+
+  @media (max-width: 768px) {
+    label {
+      font-size: 1.25rem;
+
+      p {
+        font-size: 1rem !important;
+      }
+    }
+
+    textarea {
+      min-height: 100px;
+    }
+
+    input,
+    textarea {
+      font-size: 1rem;
+      border-size: 1px;
+      border-radius: 2px;
+    }
+
+    button {
+      font-size: 1.5rem;
+    }
+  }
 `;
 
 export default function ContactForm() {

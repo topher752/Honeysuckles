@@ -35,6 +35,30 @@ const ContactInfo = styled.div`
       color: #212121;
     }
   }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 85px 50px 50px 50px;
+    align-items: center;
+
+    .text {
+      width: 100%;
+      gap: 20px;
+
+      h2 {
+        font-size: 1.75rem;
+      }
+
+      p {
+        font-size: 1.25rem;
+      }
+    }
+
+    .contact-image {
+      height: auto;
+      width: 65vw;
+    }
+  }
 `;
 
 export default function ContactUsPage() {

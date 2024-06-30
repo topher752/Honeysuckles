@@ -13,19 +13,21 @@ const WebNav = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 75px;
+  padding: 10px 50px;
+  width: 100%;
 
   img {
     max-height: 85px;
-    width: auto;
-    height: 75%;
+    max-width: 315px;
+    height: auto;
+    width: 20%;
     cursor: pointer;
   }
 
   .items {
     display: flex;
     gap: 38px;
-    font-size: 24px;
+    font-size: 1.5rem;
     color: #000;
 
     p {
@@ -36,6 +38,13 @@ const WebNav = styled.div`
     p:hover {
       border-color: #000;
       transition: border-color 0.3s ease;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .items {
+      gap: 30px;
+      font-size: 1rem;
     }
   }
 `;
@@ -90,7 +99,7 @@ const MobileNav = styled.div`
 export default function HeadNav() {
   const router = useRouter();
   const pathname = usePathname();
-  const max1000 = useMedia("(max-width: 1000px");
+  const max768 = useMedia("(max-width: 768px");
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleRoute = (url: string, e: any) => {
@@ -98,7 +107,7 @@ export default function HeadNav() {
     router.push(url);
   };
 
-  return !max1000 ? (
+  return !max768 ? (
     <WebNav>
       <img
         src={HeadLogo.src}
