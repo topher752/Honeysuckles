@@ -1,95 +1,261 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+"use client";
+
+import styled from "styled-components";
+import { useRouter } from "next/navigation";
+import LandingImage from "@/public/Photos/LandingBackground.webp";
+import Icon from "@/public/Icon.svg";
+import Arrow from "@/public/Arrow.svg";
+import ContactBlock from "@/components/ContactBlock";
+import Image from "next/image";
+import WeddingsImg from "@/public/Photos/Weddings/Table_Decor.webp";
+import EverydayImg from "@/public/Photos/Everyday/Birthday_Bouquet.webp";
+import SpecialImg from "@/public/Photos/SpecialOccassions/Custom_Fall_Decor.webp";
+import { useMedia } from "./hooks/useMedia";
+
+const LandingBackground = styled.div`
+  width: 100%;
+  height: auto;
+  padding: 100px 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  .items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: auto;
+    align-items: center;
+    margin-bottom: 75px;
+
+    img {
+      max-height: 200px;
+      width: auto;
+      height: 100%;
+    }
+
+    h1 {
+      filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.25));
+      width: 70%;
+      text-align: center;
+      color: #fff;
+    }
+  }
+
+  @media (max-width: 700px) {
+    padding: 125px 0 50px;
+    img {
+      max-height: 125px !important;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+`;
+
+const Container = styled.div`
+  padding: 100px 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 125px;
+
+  @media (max-width: 1200px) {
+    padding: 100px 75px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 50px 75px;
+    gap: 50px;
+  }
+
+  @media (max-width: 400px) {
+    padding: 25px 40px;
+  }
+`;
+
+const NavBlock = styled.div`
+  display: flex;
+  gap: 50px;
+  max-height: fit-content;
+  justify-content: center;
+
+  .image {
+    height: 75vh;
+    max-width: 350px;
+    max-height: 350px;
+    width: 75vw;
+    background-size: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
+  h2 {
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: 28px;
+  }
+
+  .link {
+    font-weight: bold;
+    color: #be7c4d;
+    cursor: pointer;
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 40%;
+
+    .button {
+      display: flex;
+      gap: 10px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+
+    .image {
+      height: auto;
+      width: 45vw;
+      aspect-ratio: 1 / 1;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      text-wrap: wrap;
+      width: 100%;
+    }
+
+    p {
+      font-size: 1.25rem;
+    }
+
+    .text {
+      width: 100%;
+      gap: 10px;
+    }
+  }
+`;
 
 export default function Home() {
+  const router = useRouter();
+  const max768 = useMedia("(max-width: 768px");
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div>
+      <LandingBackground
+        style={{ backgroundImage: `url(${LandingImage.src})` }}
+      >
+        <div className="items">
+          <img src={Icon.src} alt="icon-logo"/>
+          <h1 className="raleway">
+            Creating elegant floral and greenery arrangements
+          </h1>
         </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+      </LandingBackground>
+      <Container>
+        <NavBlock>
+          <div className="text">
+            <h2 className="raleway">Weddings</h2>
+            <p className="roboto">
+              From church arrangements to reception centerpieces and everything
+              in between; create elegant pieces to celebrate your special day.
+              Choose your color palate, favorite flowers, and style, and let&apos;s
+              celebrate.
+            </p>
+            <div
+              className="button"
+              onClick={(e) => {
+                e.preventDefault();
+                router.push("/weddings");
+              }}
+            >
+              <p className="link raleway">
+                View more in <span>Weddings</span>
+              </p>
+              <img src={Arrow.src} alt="nav-arrow"/>
+            </div>
+          </div>
+          <Image
+            className="image"
+            src={WeddingsImg.src}
+            height={0}
+            width={0}
+            unoptimized
+            loading="lazy"
+            alt="weddings image"
+          />
+        </NavBlock>
+        <NavBlock style={!max768 ? { flexDirection: "row-reverse" } : {}}>
+          <div className="text">
+            <h2 className="raleway">Flower Arrangements</h2>
+            <p className="roboto">
+              Birthdays, Anniversaries, loss of a loved one, or any other
+              occasion; create an arrangement in any size with colors of your
+              choosing.
+            </p>
+            <div
+              className="button"
+              onClick={(e) => {
+                e.preventDefault();
+                router.push("/everyday");
+              }}
+            >
+              <p className="link raleway">
+                View more in <span>Everyday</span>
+              </p>
+              <img src={Arrow.src} alt="nav-arrow"/>
+            </div>
+          </div>
+          <Image
+            className="image"
+            src={EverydayImg.src}
+            height={0}
+            width={0}
+            unoptimized
+            loading="lazy"
+            alt="everyday image"
+          />
+        </NavBlock>
+        <NavBlock>
+          <div className="text">
+            <h2 className="raleway">Special Occasions</h2>
+            <p className="roboto">
+              Hosting an event? Dinner parties, Showers, Bunco to BBQ&apos;s; add
+              special touches with fresh decorations and swags. Create beautiful
+              and elegant decorations to enhance your event.
+            </p>
+            <div
+              className="button"
+              onClick={(e) => {
+                e.preventDefault();
+                router.push("/special-occasions");
+              }}
+            >
+              <p className="link raleway">
+                View more in <span>Special Occasions</span>
+              </p>
+              <img src={Arrow.src} alt="nav-arrow"/>
+            </div>
+          </div>
+          <Image
+            className="image"
+            src={SpecialImg.src}
+            height={0}
+            width={0}
+            unoptimized
+            loading="lazy"
+            alt="special occasions image"
+          />
+        </NavBlock>
+      </Container>
+      <ContactBlock />
+    </div>
+  );
 }

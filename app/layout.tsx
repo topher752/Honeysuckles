@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Raleway } from "next/font/google";
+import { raleway, roboto } from "./fonts";
 import "./globals.css";
-
-const raleway = Raleway({ subsets: ["latin"] });
+import HeadNav from "@/components/HeadNav";
+import Footer from "@/components/Footer";
+import StyledComponentsRegistry from "@/components/registry";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +16,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={raleway.className}>{children}</body>
+    <html lang="en" className={`${raleway.variable} ${roboto.variable}`}>
+      <body>
+        <StyledComponentsRegistry>
+          <HeadNav />
+          <main>{children}</main>
+          <footer>
+            <Footer />
+          </footer>
+        </StyledComponentsRegistry>
+      </body>
     </html>
   );
 }
