@@ -1,10 +1,14 @@
 "use client";
 
 import HeadLogo from "@/public/HeadLogo.svg";
-import { useRouter } from "next/navigation";
+import MenuIcon from "@/public/MenuIcon.svg";
+import HoneysucklesIcon from "@/public/HoneysucklesIcon.svg";
+import { useRouter, usePathname } from "next/navigation";
 import styled from "styled-components";
+import { useMedia } from "@/app/hooks/useMedia";
+import { useState } from "react";
 
-const Navigation = styled.div`
+const WebNav = styled.div`
   background-color: #f5f5f5;
   display: flex;
   justify-content: space-between;
@@ -36,16 +40,71 @@ const Navigation = styled.div`
   }
 `;
 
+const MobileNav = styled.div`
+  top: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+
+  .main-container {
+    background-color: #f5f5f5;
+    width: 100%;
+    position: relative;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    filter: drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.4));
+
+    .menu {
+      height: 35px;
+      width: 35px;
+    }
+
+    .mobile-logo {
+      height: 45px;
+      width: 45px;
+    }
+  }
+
+  .navigation {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: #002E2C;
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+    font-size: 1.25rem;
+    flex-direction: column;
+    position: absolute;
+    height: fit-content;
+    font-weight: 500;
+    color: #fff;
+
+    p.selected {
+      color: #F66363;
+    }
+`;
+
 export default function HeadNav() {
   const router = useRouter();
+  const pathname = usePathname();
+  const max1000 = useMedia("(max-width: 1000px");
+  const [mobileOpen, setMobileOpen] = useState(false);
+
   const handleRoute = (url: string, e: any) => {
     e.preventDefault();
     router.push(url);
   };
 
-  return (
-    <Navigation>
-      <img src={HeadLogo.src} onClick={(e) => handleRoute("/", e)} />
+  return !max1000 ? (
+    <WebNav>
+      <img
+        src={HeadLogo.src}
+        onClick={(e) => handleRoute("/", e)}
+        alt="honeysuckles-logo"
+      />
       <div className="items roboto">
         <p onClick={(e) => handleRoute("/about", e)}>About</p>
         <p onClick={(e) => handleRoute("/weddings", e)}>Weddings</p>
@@ -55,6 +114,76 @@ export default function HeadNav() {
         </p>
         <p onClick={(e) => handleRoute("/contact-us", e)}>Contact</p>
       </div>
-    </Navigation>
+    </WebNav>
+  ) : (
+    <>
+      <MobileNav>
+        <div className="main-container">
+          <img
+            src={MenuIcon.src}
+            alt="navigation-menu"
+            className="menu"
+            onClick={() => setMobileOpen(!mobileOpen)}
+          />
+          <img
+            src={HoneysucklesIcon.src}
+            alt="honeysuckles-icon"
+            className="mobile-logo"
+            onClick={(e) => handleRoute("/", e)}
+          />
+        </div>
+        {mobileOpen && (
+          <div className="navigation roboto">
+            <p
+              onClick={(e) => {
+                handleRoute("/about", e);
+                setMobileOpen(false);
+              }}
+              className={pathname!.includes("/about") ? "selected" : ""}
+            >
+              About
+            </p>
+            <p
+              onClick={(e) => {
+                handleRoute("/weddings", e);
+                setMobileOpen(false);
+              }}
+              className={pathname!.includes("/weddings") ? "selected" : ""}
+            >
+              Weddings
+            </p>
+            <p
+              onClick={(e) => {
+                handleRoute("/everyday", e);
+                setMobileOpen(false);
+              }}
+              className={pathname!.includes("/everyday") ? "selected" : ""}
+            >
+              Everyday
+            </p>
+            <p
+              onClick={(e) => {
+                handleRoute("/special-occasions", e);
+                setMobileOpen(false);
+              }}
+              className={
+                pathname!.includes("/special-occasions") ? "selected" : ""
+              }
+            >
+              Special Occasions
+            </p>
+            <p
+              onClick={(e) => {
+                handleRoute("/contact-us", e);
+                setMobileOpen(false);
+              }}
+              className={pathname!.includes("/contact-us") ? "selected" : ""}
+            >
+              Contact
+            </p>
+          </div>
+        )}
+      </MobileNav>
+    </>
   );
 }
