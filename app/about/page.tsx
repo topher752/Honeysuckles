@@ -2,10 +2,11 @@
 import AboutImage from "../../public/Photos/AboutImage.webp";
 import styled from "styled-components";
 import ContactBlock from "@/components/ContactBlock";
+import Image from "next/image";
 
 const AboutInfo = styled.div`
   display: flex;
-  gap: 100px;
+  gap: 50px;
   padding: 65px 100px;
   justify-content: center;
 
@@ -32,6 +33,31 @@ const AboutInfo = styled.div`
       font-size: 1.3rem;
       width: 100%;
       color: #212121;
+    }
+  }
+
+  @media (max-width: 950px) {
+    flex-direction: column;
+    padding: 85px 50px 50px 50px;
+    align-items: center;
+
+    .text {
+      width: 100%;
+      gap: 20px;
+
+      h2 {
+        font-size: 1.75rem;
+      }
+
+      p {
+        font-size: 1.25rem;
+      }
+    }
+
+    .about-image {
+      height: auto;
+      width: 65vw;
+      max-height: none;
     }
   }
 `;
@@ -67,7 +93,11 @@ export default function ContactUsPage() {
             look forward to helping you.
           </p>
         </div>
-        <img
+        <Image
+          height={0}
+          width={0}
+          unoptimized
+          loading="lazy"
           className="about-image"
           src={AboutImage.src}
           alt="about-honeysuckles"

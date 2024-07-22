@@ -2,10 +2,11 @@
 import ContactImage from "../../public/Photos/ContactFlowers.webp";
 import styled from "styled-components";
 import ContactForm from "@/components/ContactForm";
+import Image from "next/image";
 
 const ContactInfo = styled.div`
   display: flex;
-  gap: 100px;
+  gap: 50px;
   padding: 65px 100px;
   justify-content: center;
 
@@ -16,6 +17,7 @@ const ContactInfo = styled.div`
     border-radius: 10px;
     background-size: cover;
     background-repeat: no-repeat;
+    aspect-ratio: auto;
   }
 
   .text {
@@ -36,7 +38,7 @@ const ContactInfo = styled.div`
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 950px) {
     flex-direction: column;
     padding: 85px 50px 50px 50px;
     align-items: center;
@@ -57,6 +59,7 @@ const ContactInfo = styled.div`
     .contact-image {
       height: auto;
       width: 65vw;
+      max-height: none;
     }
   }
 `;
@@ -73,7 +76,15 @@ export default function ContactUsPage() {
           </p>
           <ContactForm />
         </div>
-        <img className="contact-image" src={ContactImage.src} alt="contact-us-flowers"/>
+        <Image
+          height={0}
+          width={0}
+          unoptimized
+          loading="lazy"
+          className="contact-image"
+          src={ContactImage.src}
+          alt="contact-us-flowers"
+        />
       </ContactInfo>
     </>
   );

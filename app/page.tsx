@@ -59,6 +59,13 @@ const Container = styled.div`
   flex-direction: column;
   gap: 125px;
 
+  .arrow {
+    max-height: 66px;
+    max-width: 13px;
+    height: auto;
+    width: 30vw;
+  }
+
   @media (max-width: 1200px) {
     padding: 100px 75px;
   }
@@ -153,7 +160,7 @@ export default function Home() {
         style={{ backgroundImage: `url(${LandingImage.src})` }}
       >
         <div className="items">
-          <img src={Icon.src} alt="icon-logo"/>
+          <Image height={0} width={0} src={Icon.src} alt="icon-logo" />
           <h1 className="raleway">
             Creating elegant floral and greenery arrangements
           </h1>
@@ -166,8 +173,8 @@ export default function Home() {
             <p className="roboto">
               From church arrangements to reception centerpieces and everything
               in between; create elegant pieces to celebrate your special day.
-              Choose your color palate, favorite flowers, and style, and let&apos;s
-              celebrate.
+              Choose your color palate, favorite flowers, and style, and
+              let&apos;s celebrate.
             </p>
             <div
               className="button"
@@ -179,7 +186,13 @@ export default function Home() {
               <p className="link raleway">
                 View more in <span>Weddings</span>
               </p>
-              <img src={Arrow.src} alt="nav-arrow"/>
+              <Image
+                height={0}
+                width={0}
+                src={Arrow.src}
+                alt="nav-arrow"
+                className="arrow"
+              />
             </div>
           </div>
           <Image
@@ -210,7 +223,13 @@ export default function Home() {
               <p className="link raleway">
                 View more in <span>Everyday</span>
               </p>
-              <img src={Arrow.src} alt="nav-arrow"/>
+              <Image
+                height={0}
+                width={0}
+                src={Arrow.src}
+                alt="nav-arrow"
+                className="arrow"
+              />
             </div>
           </div>
           <Image
@@ -227,9 +246,9 @@ export default function Home() {
           <div className="text">
             <h2 className="raleway">Special Occasions</h2>
             <p className="roboto">
-              Hosting an event? Dinner parties, Showers, Bunco to BBQ&apos;s; add
-              special touches with fresh decorations and swags. Create beautiful
-              and elegant decorations to enhance your event.
+              Hosting an event? Dinner parties, Showers, Bunco to BBQ&apos;s;
+              add special touches with fresh decorations and swags. Create
+              beautiful and elegant decorations to enhance your event.
             </p>
             <div
               className="button"
@@ -241,7 +260,13 @@ export default function Home() {
               <p className="link raleway">
                 View more in <span>Special Occasions</span>
               </p>
-              <img src={Arrow.src} alt="nav-arrow"/>
+              <Image
+                height={0}
+                width={0}
+                src={Arrow.src}
+                alt="nav-arrow"
+                className="arrow"
+              />
             </div>
           </div>
           <Image
