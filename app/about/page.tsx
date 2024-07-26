@@ -1,5 +1,5 @@
 "use client";
-import AboutImage from "../../public/Photos/AboutImage.webp";
+import AboutImage from "../../components/Photos/AboutImage.webp";
 import styled from "styled-components";
 import ContactBlock from "@/components/ContactBlock";
 import Image from "next/image";

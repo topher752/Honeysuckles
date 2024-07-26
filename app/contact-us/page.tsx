@@ -1,5 +1,5 @@
 "use client";
-import ContactImage from "../../public/Photos/ContactFlowers.webp";
+import ContactImage from "../../components/Photos/ContactFlowers.webp";
 import styled from "styled-components";
 import ContactForm from "@/components/ContactForm";
 import Image from "next/image";
