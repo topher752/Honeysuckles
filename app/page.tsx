@@ -2,14 +2,14 @@
 
 import styled from "styled-components";
 import { useRouter } from "next/navigation";
-import LandingImage from "../components/Photos/LandingBackground.webp";
+// import LandingImage from "../components/Photos/LandingBackground.webp";
 import Icon from "@/public/Icon.svg";
 import Arrow from "@/public/Arrow.svg";
 import ContactBlock from "@/components/ContactBlock";
 import Image from "next/image";
-import WeddingsImg from "../public/Weddings/Table_Decor.webp";
-import EverydayImg from "../public/Everyday/Birthday_Bouquet.webp";
-import SpecialImg from "../public/SpecialOccassions/Custom_Fall_Decor.webp";
+// import WeddingsImg from "../public/Weddings/Table_Decor.webp";
+// import EverydayImg from "../public/Everyday/Birthday_Bouquet.webp";
+// import SpecialImg from "../public/SpecialOccassions/Custom_Fall_Decor.webp";
 import { useMedia } from "./hooks/useMedia";
 
 const LandingBackground = styled.div`
@@ -157,7 +157,7 @@ export default function Home() {
   return (
     <div>
       <LandingBackground
-        style={{ backgroundImage: `url(${LandingImage.src})` }}
+      // style={{ backgroundImage: `url(${LandingImage.src})` }}
       >
         <div className="items">
           <Image height={0} width={0} src={Icon.src} alt="icon-logo" />
@@ -195,7 +195,7 @@ export default function Home() {
               />
             </div>
           </div>
-          <Image
+          {/* <Image
             className="image"
             src={WeddingsImg.src}
             height={0}
@@ -203,7 +203,7 @@ export default function Home() {
             unoptimized
             loading="lazy"
             alt="weddings image"
-          />
+          /> */}
         </NavBlock>
         <NavBlock style={!max768 ? { flexDirection: "row-reverse" } : {}}>
           <div className="text">
@@ -223,16 +223,16 @@ export default function Home() {
               <p className="link raleway">
                 View more in <span>Everyday</span>
               </p>
-              <Image
+              {/*<Image
                 height={0}
                 width={0}
                 src={Arrow.src}
                 alt="nav-arrow"
                 className="arrow"
-              />
+              />*/}
             </div>
           </div>
-          <Image
+          {/* <Image
             className="image"
             src={EverydayImg.src}
             height={0}
@@ -240,7 +240,7 @@ export default function Home() {
             unoptimized
             loading="lazy"
             alt="everyday image"
-          />
+          /> */}
         </NavBlock>
         <NavBlock>
           <div className="text">
@@ -269,7 +269,7 @@ export default function Home() {
               />
             </div>
           </div>
-          <Image
+          {/* <Image
             className="image"
             src={SpecialImg.src}
             height={0}
@@ -277,7 +277,7 @@ export default function Home() {
             unoptimized
             loading="lazy"
             alt="special occasions image"
-          />
+          /> */}
         </NavBlock>
       </Container>
       <ContactBlock />

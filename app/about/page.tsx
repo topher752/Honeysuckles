@@ -1,8 +1,8 @@
 "use client";
-import AboutImage from "../../components/Photos/AboutImage.webp";
+// import AboutImage from "../../components/Photos/AboutImage.webp";
 import styled from "styled-components";
 import ContactBlock from "@/components/ContactBlock";
-import Image from "next/image";
+// import Image from "next/image";
 
 const AboutInfo = styled.div`
   display: flex;
@@ -93,7 +93,7 @@ export default function ContactUsPage() {
             look forward to helping you.
           </p>
         </div>
-        <Image
+        {/* <Image
           height={0}
           width={0}
           unoptimized
@@ -101,7 +101,7 @@ export default function ContactUsPage() {
           className="about-image"
           src={AboutImage.src}
           alt="about-honeysuckles"
-        />
+        /> */}
       </AboutInfo>
       <ContactBlock />
     </>
