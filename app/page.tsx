@@ -2,14 +2,14 @@
 
 import styled from "styled-components";
 import { useRouter } from "next/navigation";
-import LandingImage from "../components/Photos/LandingBackground.webp";
+import LandingImage from "../public/Photos/LandingBackground.webp";
 import Icon from "@/public/Icon.svg";
 import Arrow from "@/public/Arrow.svg";
 import ContactBlock from "@/components/ContactBlock";
 import Image from "next/image";
-import WeddingsImg from "../public/Weddings/Table_Decor.webp";
-import EverydayImg from "../public/Everyday/Birthday_Bouquet.webp";
-import SpecialImg from "../public/SpecialOccassions/Custom_Fall_Decor.webp";
+import WeddingsImg from "../public/Photos/Weddings/Table_Decor.webp";
+import EverydayImg from "../public/Photos/Everyday/Birthday_Bouquet.webp";
+import SpecialImg from "../public/Photos/SpecialOccassions/Custom_Fall_Decor.webp";
 import { useMedia } from "./hooks/useMedia";
 
 const LandingBackground = styled.div`
