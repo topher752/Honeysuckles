@@ -160,7 +160,7 @@ export default function Home() {
         style={{ backgroundImage: `url(${LandingImage.src})` }}
       >
         <div className="items">
-          <Image height={0} width={0} src={Icon.src} alt="icon-logo" />
+          <Image height={0} width={0} src={Icon.src} alt="icon-logo" unoptimized/>
           <h1 className="raleway">
             Creating elegant floral and greenery arrangements
           </h1>
