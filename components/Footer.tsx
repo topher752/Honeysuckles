@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Icon from "@/public/Icon.svg";
 import LinkedIn from "@/public/LinkedIn.svg";
 import Instagram from "@/public/Instagram.svg";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 const StyledFooter = styled.div`
@@ -72,14 +73,14 @@ export default function Footer() {
           href="https://www.linkedin.com/company/honeysucklesflowers"
           target="_blank"
         >
-          <img src={LinkedIn.src} alt="linkedin"/>
+          <Image height={24} width={24} src={LinkedIn.src} alt="linkedin" />
         </a>
-        <img src={Icon.src} style={{ height: "101px", width: "96px" }} alt="honeysuckles"/>
+        <Image height={101} width={96} src={Icon.src} alt="honeysuckles" />
         <a
           href="https://www.instagram.com/honeysuckles_flowers/"
           target="_blank"
         >
-          <img src={Instagram.src} alt="instagram"/>
+          <Image height={24} width={24} src={Instagram.src} alt="instagram" />
         </a>
       </div>
     </StyledFooter>

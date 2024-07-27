@@ -2,6 +2,7 @@
 
 import HeadLogo from "@/public/HeadLogo.svg";
 import MenuIcon from "@/public/MenuIcon.svg";
+import Image from "next/image";
 import HoneysucklesIcon from "@/public/HoneysucklesIcon.svg";
 import { useRouter, usePathname } from "next/navigation";
 import styled from "styled-components";
@@ -111,7 +112,9 @@ export default function HeadNav() {
 
   return !max768 ? (
     <WebNav>
-      <img
+      <Image
+        height={0}
+        width={0}
         src={HeadLogo.src}
         onClick={(e) => handleRoute("/", e)}
         alt="honeysuckles-logo"
@@ -130,13 +133,17 @@ export default function HeadNav() {
     <>
       <MobileNav>
         <div className="main-container">
-          <img
+          <Image
+            height={0}
+            width={0}
             src={MenuIcon.src}
             alt="navigation-menu"
             className="menu"
             onClick={() => setMobileOpen(!mobileOpen)}
           />
-          <img
+          <Image
+            height={0}
+            width={0}
             src={HoneysucklesIcon.src}
             alt="honeysuckles-icon"
             className="mobile-logo"
