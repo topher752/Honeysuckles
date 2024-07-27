@@ -1,8 +1,8 @@
 "use client";
-// import ContactImage from "../../components/Photos/ContactFlowers.webp";
+import ContactImage from "../../public/Photos/ContactFlowers.webp";
 import styled from "styled-components";
 import ContactForm from "@/components/ContactForm";
-// import Image from "next/image";
+import Image from "next/image";
 
 const ContactInfo = styled.div`
   display: flex;
@@ -76,7 +76,7 @@ export default function ContactUsPage() {
           </p>
           <ContactForm />
         </div>
-        {/* <Image
+        <Image
           height={0}
           width={0}
           unoptimized
@@ -84,7 +84,7 @@ export default function ContactUsPage() {
           className="contact-image"
           src={ContactImage.src}
           alt="contact-us-flowers"
-        /> */}
+        />
       </ContactInfo>
     </>
   );
