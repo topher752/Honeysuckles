@@ -1,8 +1,8 @@
 export const WeddingPhotos = [
   {
-    src: "/Photos/Weddings/Anemone_Candles.webp",
-    alt: "anemone candles",
-    size: "tall",
+    src: "/Photos/Weddings/WeddingCard.webp",
+    alt: "wedding card",
+    size: "large",
   },
   {
     src: "/Photos/Weddings/Anemone_Waxflower.webp",
@@ -13,6 +13,11 @@ export const WeddingPhotos = [
     src: "/Photos/Weddings/Babys_Breath_Mums.webp",
     alt: "baby breath mums",
     size: "",
+  },
+  {
+    src: "/Photos/Weddings/Anemone_Candles.webp",
+    alt: "anemone candles",
+    size: "tall",
   },
   {
     src: "/Photos/Weddings/Bridal_Bouquet.webp",
