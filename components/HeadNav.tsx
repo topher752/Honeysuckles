@@ -99,7 +99,7 @@ const MobileNav = styled.div`
     }
 `;
 
-export default function HeadNav() {
+export default function HeadNav({ sale = false }: { sale?: boolean }) {
   const router = useRouter();
   const pathname = usePathname();
   const max768 = useMedia("(max-width: 768px");
@@ -111,7 +111,7 @@ export default function HeadNav() {
   };
 
   return !max768 ? (
-    <WebNav>
+    <WebNav style={sale ? { marginTop: "59px" } : {}}>
       <Image
         height={0}
         width={0}
@@ -131,7 +131,7 @@ export default function HeadNav() {
     </WebNav>
   ) : (
     <>
-      <MobileNav>
+      <MobileNav style={sale ? { marginTop: "46px" } : {}}>
         <div className="main-container">
           <Image
             height={0}
