@@ -24,7 +24,7 @@ export default function RootLayout({
           {/* Sale Banner */}
           <SaleBanner />
           <HeadNav sale/>
-          <main>{children}</main>
+          <main className="sale">{children}</main>
           <footer>
             <Footer />
           </footer>

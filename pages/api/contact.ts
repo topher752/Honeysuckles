@@ -20,7 +20,7 @@ const handler = async (req: any, res: any) => {
       email: data.email,
       phoneNumber: data.phone,
       message: data.message,
-      // image: image,
+      sale: data.sale,
     })
   );
   try {
