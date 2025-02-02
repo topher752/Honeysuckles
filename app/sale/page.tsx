@@ -32,7 +32,7 @@ const SaleInfo = styled.div`
 
   @media (max-width: 950px) {
     flex-direction: column;
-    padding: 50px;
+    padding: 100px 50px;
     align-items: center;
 
     .text {
