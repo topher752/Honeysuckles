@@ -13,7 +13,7 @@ const SaleInfo = styled.div`
   justify-content: center;
   flex-direction: column;
 
-  .text {
+  .header-text {
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -87,6 +87,12 @@ const ImageBlock = styled.div`
     width: 100%;
     color: #212121;
     max-width: 500px;
+
+    span {
+      color: #750d37;
+      font-weight: bold;
+      font-style: normal;
+    }
   }
 
   @media (max-width: 950px) {
@@ -103,7 +109,7 @@ export default function ContactUsPage() {
   return (
     <>
       <SaleInfo>
-        <div className="text raleway">
+        <div className="header-text raleway">
           <h2>Happy Valentines!</h2>
           <p className="roboto">
             Valentine's Day gifts and flowers are the ultimate token of love and
@@ -124,7 +130,7 @@ export default function ContactUsPage() {
             />
             <p className="text roboto">
               Celebrate this Valentines with a $5 Gift Certificate from
-              Starbucks or Dunkin' with a small bouquet for 20$
+              Starbucks or Dunkin' with a small bouquet for <span>$20</span>
             </p>
           </ImageBlock>
           <ImageBlock>
@@ -150,8 +156,9 @@ export default function ContactUsPage() {
             </div>
             <p className="text roboto">
               Celebrate this Valentines with by gifting a Bottle of Presecco
-              customized with a beloved floral arrangement, starting $15 for a
-              small bottle and $25 for large.
+              customized with a beloved floral arrangement, starting{" "}
+              <span>$15 for a small bottle</span> and{" "}
+              <span>$25 for large.</span>
             </p>
           </ImageBlock>
         </SaleContainer>
