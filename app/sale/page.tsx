@@ -112,7 +112,7 @@ export default function ContactUsPage() {
         <div className="header-text raleway">
           <h2>Happy Valentines!</h2>
           <p className="roboto">
-            Valentine's Day gifts and flowers are the ultimate token of love and
+            Valentine&apos;s Day gifts and flowers are the ultimate token of love and
             affection! This month, we are happy to offer the following options
             to you to share this month with all inquiries:
           </p>
@@ -130,7 +130,7 @@ export default function ContactUsPage() {
             />
             <p className="text roboto">
               Celebrate this Valentines with a $5 Gift Certificate from
-              Starbucks or Dunkin' with a small bouquet for <span>$20</span>
+              Starbucks or Dunkin&apos; with a small bouquet for <span>$20</span>
             </p>
           </ImageBlock>
           <ImageBlock>
