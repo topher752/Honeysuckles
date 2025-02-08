@@ -82,7 +82,7 @@ const Form = styled.form`
 
     &:hover {
       background-color: #f66363;
-      color: #fff
+      color: #fff;
     }
   }
 
@@ -138,12 +138,14 @@ const Form = styled.form`
 const StyledRadio = styled.li`
   label {
     display: inline-flex;
-    align-items: center;
+    align-items: flex-start;
     font-size: 1.25rem;
     margin-top: 10px;
+    max-width: 100%;
 
     @media (max-width: 768px) {
       font-size: 1rem;
+      width: 300px;
     }
   }
 
@@ -159,12 +161,13 @@ const StyledRadio = styled.li`
 
   label::before {
     content: "";
-    display: block;
+    display: inline-block;
     height: 18px;
     width: 18px;
     border: solid 1px #f66363;
     border-radius: 50%;
     margin-right: 0.5em;
+    flex-shrink: 0;
   }
 
   input[type="radio"]:checked + input[type="radio"]::before {
