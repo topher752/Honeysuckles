@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { sendForm } from "./api";
 import { ValentineSale } from "./sales";
+import Image from "next/image";
+import CheckIcon from "@/public/CheckIcon.svg";
 
 const Form = styled.form`
   width: 100%;
@@ -82,7 +84,7 @@ const Form = styled.form`
 
     &:hover {
       background-color: #f66363;
-      color: #fff
+      color: #fff;
     }
   }
 
@@ -138,12 +140,14 @@ const Form = styled.form`
 const StyledRadio = styled.li`
   label {
     display: inline-flex;
-    align-items: center;
+    align-items: flex-start;
     font-size: 1.25rem;
     margin-top: 10px;
+    max-width: 100%;
 
     @media (max-width: 768px) {
       font-size: 1rem;
+      width: 300px;
     }
   }
 
@@ -159,12 +163,13 @@ const StyledRadio = styled.li`
 
   label::before {
     content: "";
-    display: block;
+    display: inline-block;
     height: 18px;
     width: 18px;
     border: solid 1px #f66363;
     border-radius: 50%;
     margin-right: 0.5em;
+    flex-shrink: 0;
   }
 
   input[type="radio"]:checked + input[type="radio"]::before {
@@ -183,6 +188,37 @@ const StyledRadio = styled.li`
       currentColor 50%,
       transparent 55%
     );
+  }
+`;
+
+const Completed = styled.div`
+  width: fit-content;
+  border-top: 2px solid rgb(246, 99, 99, 0.25);
+  padding-top: 15px;
+
+  .main {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  h3 {
+    font-size: 2rem;
+    margin: 0;
+    color: #f66363;
+  }
+
+  p {
+    font-size: 1.25rem;
+    color: #212121 !important;
+    font-weight: bold;
+  }
+
+  @media (max-width: 400px) {
+    h3 {
+      font-size: 1.5rem;
+    }
   }
 `;
 
@@ -208,19 +244,32 @@ export default function ContactForm() {
     const emailRegx =
       /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const phoneRegx = /^(\+\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/;
-    if (obj.name === "" || obj.email === "" || obj.message === "") {
+    if (
+      obj.name === "" ||
+      !emailRegx.test(obj.email) ||
+      obj.message === "" ||
+      (obj.phone !== "" && !phoneRegx.test(obj.phone))
+    ) {
       return false;
     }
     return true;
   };
 
   const handleSubmit = async () => {
-    await sendForm(user);
+    try {
+      const response = await sendForm(user);
+      const result = await response.json();
+      if (result.message === "Email Sent") {
+        setSent(true);
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
     <>
-      {!sent && (
+      {!sent ? (
         <Form id="contact-form" onSubmit={(e) => e.preventDefault()}>
           <div className="row">
             <label className="roboto custom-label">
@@ -312,6 +361,23 @@ export default function ContactForm() {
             Submit
           </button>
         </Form>
+      ) : (
+        <Completed>
+          <div className="main">
+            <Image
+              height={50}
+              width={50}
+              src={CheckIcon.src}
+              alt="sent-email"
+              unoptimized
+            />
+            <h3>Message Sent!</h3>
+          </div>
+          <p>
+            We have recieved your message and will get back to you shortly.
+            Thank you and have a great rest of your day!
+          </p>
+        </Completed>
       )}
     </>
   );
