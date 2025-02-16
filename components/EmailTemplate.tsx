@@ -80,7 +80,7 @@ export const EmailTemplate = ({
         Phone Number:{" "}
         <span style={{ color: "black", fontWeight: "500" }}>{phoneNumber}</span>
       </h2>
-      <h2
+      {/* <h2
         style={{
           margin: "0",
           color: "#f66363",
@@ -90,7 +90,7 @@ export const EmailTemplate = ({
       >
         Sale Request:{" "}
         <span style={{ color: "black", fontWeight: "500" }}>{sale}</span>
-      </h2>
+      </h2> */}
       <p style={{ fontSize: "20px", width: "100%" }}>{message}</p>
     </div>
   );
