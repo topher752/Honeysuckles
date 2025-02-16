@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { sendForm } from "./api";
-import { ValentineSale } from "./sales";
 import Image from "next/image";
 import CheckIcon from "@/public/CheckIcon.svg";
 
@@ -137,6 +136,8 @@ const Form = styled.form`
   }
 `;
 
+// Styled Radio - Uncomment when Active
+/*
 const StyledRadio = styled.li`
   label {
     display: inline-flex;
@@ -190,6 +191,7 @@ const StyledRadio = styled.li`
     );
   }
 `;
+*/
 
 const Completed = styled.div`
   width: fit-content;
@@ -313,7 +315,7 @@ export default function ContactForm() {
               className="roboto"
             />
           </label>
-          <label className="roboto custom-label">
+          {/* <label className="roboto custom-label">
             <p>Sale</p>
             <ul>
               {ValentineSale.map((sale, idx) => (
@@ -338,7 +340,7 @@ export default function ContactForm() {
             >
               Deselect Option
             </button>
-          </label>
+          </label> */}
           <label className="roboto custom-label">
             <p>
               Message<span>*</span>

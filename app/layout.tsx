@@ -4,7 +4,7 @@ import "./globals.css";
 import HeadNav from "@/components/HeadNav";
 import Footer from "@/components/Footer";
 import StyledComponentsRegistry from "@/components/registry";
-import SaleBanner from "@/components/SaleBanner";
+// import SaleBanner from "@/components/SaleBanner";
 
 export const metadata: Metadata = {
   title: "Honeysuckles | Personalized Floral Designs",
@@ -21,9 +21,8 @@ export default function RootLayout({
     <html lang="en" className={`${raleway.variable} ${roboto.variable}`}>
       <body>
         <StyledComponentsRegistry>
-          {/* Sale Banner */}
-          <SaleBanner />
-          <HeadNav sale/>
+          {/* <SaleBanner /> */}
+          <HeadNav />
           <main className="sale">{children}</main>
           <footer>
             <Footer />
