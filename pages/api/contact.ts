@@ -1,19 +1,9 @@
 import { mailOptions, transporter } from "@/components/nodemailer";
 import { EmailTemplate } from "@/components/EmailTemplate";
 import { renderToStaticMarkup } from "react-dom/server";
-// import fs from "node:fs";
-// import path from "path";
-// import { fileURLToPath } from "node:url";
 
 const handler = async (req: any, res: any) => {
   const data = req.body;
-  // const __filename = fileURLToPath(import.meta.url);
-  // const __dirname = path.dirname(__filename);
-  // const imageData = fs.readFileSync(__dirname + "/HeadLogo.svg", "binary");
-  // const image = `data:image/jpg;base644,${Buffer.from(
-  //   imageData,
-  //   "binary"
-  // ).toString("base64")}`;
   const email = renderToStaticMarkup(
     EmailTemplate({
       name: data.name,

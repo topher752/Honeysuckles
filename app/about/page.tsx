@@ -1,7 +1,6 @@
 "use client";
 import AboutImage from "../../public/Photos/AboutImage.webp";
 import styled from "styled-components";
-import ContactBlock from "@/components/ContactBlock";
 import Image from "next/image";
 
 const AboutInfo = styled.div`
@@ -103,7 +102,6 @@ export default function ContactUsPage() {
           alt="about-honeysuckles"
         />
       </AboutInfo>
-      <ContactBlock />
     </>
   );
 }
