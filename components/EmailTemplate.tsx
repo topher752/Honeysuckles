@@ -11,7 +11,7 @@ export const EmailTemplate = ({
   email,
   message,
   phoneNumber,
-  sale,
+  // sale,
 }: IEmail) => {
   return (
     <div
@@ -26,9 +26,9 @@ export const EmailTemplate = ({
         maxWidth: "-webkit-fill-available",
       }}
     >
-      {/* <div style={{ width: "100%" }}>
+      <div style={{ width: "100%" }}>
         <img
-          src={image}
+          src="https://honeysuckles.vercel.app/HeadLogo.svg"
           style={{
             height: "auto",
             width: "40%",
@@ -38,7 +38,7 @@ export const EmailTemplate = ({
           }}
           alt="honeysuckles-logo"
         />
-      </div> */}
+      </div>
       <h1
         style={{
           margin: "0",
