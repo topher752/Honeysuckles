@@ -4,7 +4,6 @@ import Image from "next/image";
 import Certificate from "../../public/Photos/Sales/Valentines/GiftCertificate.webp";
 import LargePresecco from "../../public/Photos/Sales/Valentines/Large_Presecco.webp";
 import SmallPresecco from "../../public/Photos/Sales/Valentines/SmallProsecco.webp";
-import ContactBlock from "@/components/ContactBlock";
 
 const SaleInfo = styled.div`
   display: flex;
@@ -112,9 +111,9 @@ export default function ContactUsPage() {
         <div className="header-text raleway">
           <h2>Happy Valentines!</h2>
           <p className="roboto">
-            Valentine&apos;s Day gifts and flowers are the ultimate token of love and
-            affection! This month, we are happy to offer the following options
-            to you to share this month with all inquiries:
+            Valentine&apos;s Day gifts and flowers are the ultimate token of
+            love and affection! This month, we are happy to offer the following
+            options to you to share this month with all inquiries:
           </p>
         </div>
         <SaleContainer>
@@ -130,7 +129,8 @@ export default function ContactUsPage() {
             />
             <p className="text roboto">
               Celebrate this Valentines with a $5 Gift Certificate from
-              Starbucks or Dunkin&apos; with a small bouquet for <span>$20</span>
+              Starbucks or Dunkin&apos; with a small bouquet for{" "}
+              <span>$20</span>
             </p>
           </ImageBlock>
           <ImageBlock>
@@ -163,7 +163,6 @@ export default function ContactUsPage() {
           </ImageBlock>
         </SaleContainer>
       </SaleInfo>
-      <ContactBlock />
     </>
   );
 }

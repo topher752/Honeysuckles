@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 import LandingImage from "../public/Photos/LandingBackground.webp";
 import Icon from "@/public/Icon.svg";
 import Arrow from "@/public/Arrow.svg";
-import ContactBlock from "@/components/ContactBlock";
 import Image from "next/image";
 import WeddingsImg from "../public/Photos/Weddings/Table_Decor.webp";
 import EverydayImg from "../public/Photos/Everyday/Birthday_Bouquet.webp";
@@ -160,7 +159,13 @@ export default function Home() {
         style={{ backgroundImage: `url(${LandingImage.src})` }}
       >
         <div className="items">
-          <Image height={0} width={0} src={Icon.src} alt="icon-logo" unoptimized/>
+          <Image
+            height={0}
+            width={0}
+            src={Icon.src}
+            alt="icon-logo"
+            unoptimized
+          />
           <h1 className="raleway">
             Creating elegant floral and greenery arrangements
           </h1>
@@ -280,7 +285,6 @@ export default function Home() {
           />
         </NavBlock>
       </Container>
-      <ContactBlock />
     </div>
   );
 }

@@ -4,6 +4,8 @@ import "./globals.css";
 import HeadNav from "@/components/HeadNav";
 import Footer from "@/components/Footer";
 import StyledComponentsRegistry from "@/components/registry";
+import MinPageWrapper from "@/components/MinPageWrapper";
+import ContactBlock from "@/components/ContactBlock";
 // import SaleBanner from "@/components/SaleBanner";
 
 export const metadata: Metadata = {
@@ -22,11 +24,14 @@ export default function RootLayout({
       <body>
         <StyledComponentsRegistry>
           {/* <SaleBanner /> */}
-          <HeadNav />
-          <main className="sale">{children}</main>
-          <footer>
-            <Footer />
-          </footer>
+          <MinPageWrapper>
+            <HeadNav />
+            <main className="sale">{children}</main>
+            <ContactBlock />
+            <footer>
+              <Footer />
+            </footer>
+          </MinPageWrapper>
         </StyledComponentsRegistry>
       </body>
     </html>
