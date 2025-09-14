@@ -26,19 +26,19 @@ export const EmailTemplate = ({
         maxWidth: "-webkit-fill-available",
       }}
     >
-      <div style={{ width: "100%" }}>
+      {/* <div style={{ width: "100%" }}>
         <img
           src="https://honeysuckles.vercel.app/HeadLogo.svg"
           style={{
             height: "auto",
-            width: "40%",
+            width: "75%",
             alignSelf: "center",
             maxWidth: "400px",
-            margin: "0 50% 20px 50%",
+            margin: "0 0 20px 0",
           }}
           alt="honeysuckles-logo"
         />
-      </div>
+      </div> */}
       <h1
         style={{
           margin: "0",
