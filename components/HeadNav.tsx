@@ -97,12 +97,13 @@ const MobileNav = styled.div`
     p.selected {
       color: #F66363;
     }
+  }
 `;
 
 export default function HeadNav({ sale = false }: { sale?: boolean }) {
   const router = useRouter();
   const pathname = usePathname();
-  const max768 = useMedia("(max-width: 768px");
+  const max768 = useMedia("(max-width: 768px)");
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleRoute = (url: string, e: any) => {
