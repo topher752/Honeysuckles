@@ -1,19 +1,26 @@
-import { useEffect, useState } from "react";
+import { useCallback, useMemo, useSyncExternalStore } from "react";
 
 export function useMedia(test: string) {
-  const [match, setMatch] = useState(false);
+  const mediaQuery = useMemo(
+    () => (typeof window === "undefined" ? null : window.matchMedia(test)),
+    [test]
+  );
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const media = window.matchMedia(test);
-      if (media.matches !== match) {
-        setMatch(media.matches);
-      }
-      const listener = () => setMatch(media.matches);
-      media.addListener(listener);
-      return () => media.removeListener(listener);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [test]);
-  return match;
+  const subscribe = useCallback(
+    (onStoreChange: () => void) => {
+      if (!mediaQuery) return () => {};
+      mediaQuery.addEventListener("change", onStoreChange);
+      return () => mediaQuery.removeEventListener("change", onStoreChange);
+    },
+    [mediaQuery]
+  );
+
+  return useSyncExternalStore(
+    subscribe,
+    () => mediaQuery?.matches ?? false,
+    // The server has no viewport, so nothing matches. Declaring this explicitly
+    // keeps the first client render identical to the server's and avoids a
+    // hydration mismatch.
+    () => false
+  );
 }
