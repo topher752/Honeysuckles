@@ -151,7 +151,7 @@ const NavBlock = styled.div`
 
 export default function Home() {
   const router = useRouter();
-  const max768 = useMedia("(max-width: 768px");
+  const max768 = useMedia("(max-width: 768px)");
 
   return (
     <div>

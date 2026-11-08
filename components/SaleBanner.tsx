@@ -51,7 +51,7 @@ const Banner = styled.div`
 `;
 
 export default function SaleBanner() {
-  const max768 = useMedia("(max-width: 768px");
+  const max768 = useMedia("(max-width: 768px)");
   const router = useRouter();
 
   return (
